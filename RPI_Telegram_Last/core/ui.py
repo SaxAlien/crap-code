@@ -12,7 +12,7 @@ status = \
         PC state: <i>{}</i>
         Verbose: <i>{}</i>
         Watchdog: <i>{}</i>
-        TK state: <i>N/A / pizda</i>
+        TK state: <i>N/A</i>
     """
 
 
