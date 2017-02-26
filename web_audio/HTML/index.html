@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НЯ</title>
+    <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
+    <script src="./js/jquery-3.1.0.min.js"></script>
+    <style>
+        body {
+            background-color: #737373;
+        }
+        .tce {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 520px !important;
+            max-width: 520px !important;
+        }
+    </style>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        $.get("/list", function (data) {
+            $("#saslist").html(data);
+        });
+    };
+</script>
+<br>
+
+<div class="tce"><br>
+    <div id="palert"><!-- АЛЕРТЫ ХЕРЕ --></div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group">
+                <select id="saslist" class="form-control">
+                    <!-- KEK -->
+                </select>
+            </div>
+            <div class="form-group">
+            </div>
+            <button type="submit" id="play" class="btn btn-default">Play</button>
+            <button type="submit" id="pause" class="btn btn-default">Pause</button>
+            <button type="submit" id="stop" class="btn btn-default">Stop</button>
+            <!--<button type="submit" id="search" class="btn btn-default">Search</button>-->
+
+
+            <br><br>
+            <script>
+                /*$("#search").click(function () {
+                    $.get("/search?" + $("#searchBox").val(), function (data) {
+                        $("#palert").html(data);
+                    });
+                });*/
+
+                $("#play").click(function () {
+                    $.get("/play?" + $("#saslist").val(), function (data) {
+                        $("#palert").html(data);
+                        $("#current").html("<marquee>" + data.split(': ')[1] + "</marquee>")
+                    });
+                });
+                $("#pause").click(function () {
+                    $.get("/pause", function (data) {
+                        $("#palert").html(data);
+                    });
+                });
+                $("#stop").click(function () {
+                    $.get("/stop", function (data) {
+                        $("#palert").html(data);
+                    });
+                });
+            </script>
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td id="current">Lmao - Enot237</td>
+                </tr>
+                </tbody>
+            </table><hr>
+            <!--<label>Search</label>
+            <input type="text" id="searchBox" class="form-control">-->
+        </div>
+    </div>
+</div>
+<br>
+<script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
