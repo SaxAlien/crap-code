@@ -16,7 +16,7 @@ from datetime import datetime
 # import random
 # import string
 
-token = '205815783:AAFw-8r6MxcAUNPQKuK5IcLwsviH-lZPUeA'
+token = '205815783:ААFw-8r6MxcAUNPQKuK5IcLwsviH-lZPUeA'
 admin_uid = 134771371
 pc_address, pc_service = '192.168.0.100', 22  # IP and service for startup detect
 
