@@ -3,7 +3,6 @@
 
 """
  Telegram module, core of a bot
-
 """
 
 # ToDo: add music player
