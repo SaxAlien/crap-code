@@ -4,7 +4,7 @@
 """
  UserInterface module for Telegram
  Now here only keyboard, but in future, im hope, here will be more UI stuff
- eg: TouchPanel or other fun stuff
+ eg: TouchPanel or other stuff
 """
 
 from telebot import types
